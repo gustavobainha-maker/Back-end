@@ -13,7 +13,8 @@ const sql = new Pool({
 const servidor = Fastify()
 
 servidor.register(cors, {
-    origin: '*'
+    origin: '*',
+    methods: ['GET', 'PUT', 'POST','DELETE']
 })
 
 servidor.get('/usuarios', async () => {
