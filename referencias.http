@@ -1,39 +1,65 @@
 ###
-
-GET http://localhost:3000/usuarios
-
-###
-
-POST http://localhost:3000/usuarios
-Content-Type: application/json
-
-{
-    "nome": "2Vinicius",
-    "email": "marquinhoLindo@gmail.com",
-    "senha": "12345"
-}
-
-###
-
-PUT http://localhost:3000/usuarios/55
-Content-Type: application/json
-
-{
-    "nome": "Kauane",
-    "email": "kauane@gmail.com",
-    "senha": "leaf green"
-}
-
-###
-
-DELETE http://localhost:3000/usuarios/3
-
-###
-
+GET http://localhost:3000/
+### Login
 POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "email": "kauane@gmail.com",
-    "senha": "leaf green"
+    "email": "teste@email.com",
+    "senha": "123456"
 }
+
+###
+
+### Listar usuários
+GET http://localhost:3000/usuarios
+
+###
+
+### Cadastrar usuário
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+    "email": "teste2@email.com",
+    "senha": "123456"
+}
+
+###
+
+### Cadastrar tarefa
+POST http://localhost:3000/tarefas
+Content-Type: application/json
+
+{
+    "titulo": "Estudar Node.js",
+    "descricao": "Estudar API",
+    "usuario_id": 1
+}
+
+###
+
+### Listar tarefas
+GET http://localhost:3000/tarefas?usuario_id=1
+
+###
+
+### Buscar tarefa
+GET http://localhost:3000/tarefas/1
+
+###
+
+### Atualizar tarefa
+PUT http://localhost:3000/tarefas/1
+Content-Type: application/json
+
+{
+    "titulo": "Estudar Node.js atualizado",
+    "descricao": "Estudar Express e PostgreSQL",
+    "concluida": true
+}
+
+###
+
+### Excluir tarefa
+DELETE http://localhost:3000/tarefas/1
